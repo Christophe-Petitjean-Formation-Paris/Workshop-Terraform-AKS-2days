@@ -32,7 +32,7 @@ jobs:
           directory: Terraform/Lab4_Pipeline_CI_CD_Terraform/
           api-key: ${{ secrets.CHECKOV_API_KEY }}
           framework: terraform
-          output_format: github_failed_only
+          hard_fail: true
 
       # Install the needed version of Terraform cli
       - name: Setup Terraform
