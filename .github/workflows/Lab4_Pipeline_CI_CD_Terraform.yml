@@ -16,6 +16,12 @@ jobs:
 
       - name: Checks-out du repository
         uses: actions/checkout@v2
+
+      - name: Run Bridgecrew 
+        id: Bridgecrew
+        uses: bridgecrewio/bridgecrew-action@master 
+        with:
+          api-key: ${{ secrets.BC_API_KEY }}
         
       - name: Code Analysis
         uses: bridgecrewio/checkov-action@v12.1347.0
