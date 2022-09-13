@@ -22,14 +22,16 @@ jobs:
         uses: bridgecrewio/bridgecrew-action@master 
         with:
           api-key: ${{ secrets.BC_API_KEY }}
-        
-      - name: Code Analysis
-        uses: bridgecrewio/checkov-action@v12.1347.0
-        with:
           directory: Terraform/Lab4_Pipeline_CI_CD_Terraform/
-          api-key: ${{ secrets.CHECKOV_API_KEY }}
           framework: terraform
-          output_format: json
+        
+     # - name: Code Analysis
+     #   uses: bridgecrewio/checkov-action@v12.1347.0
+     #   with:
+     #     directory: Terraform/Lab4_Pipeline_CI_CD_Terraform/
+     #     api-key: ${{ secrets.CHECKOV_API_KEY }}
+     #     framework: terraform
+     #     output_format: json
 
       # Install the needed version of Terraform cli
       - name: Setup Terraform
