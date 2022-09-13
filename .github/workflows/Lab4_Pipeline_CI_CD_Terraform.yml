@@ -14,6 +14,10 @@ jobs:
       - name: Checks-out du repository
         uses: actions/checkout@v2
         
+      - name: pwd
+        shell: |
+          pwd
+        
       - name: Code Analysis
         uses: bridgecrewio/checkov-action@v12.1347.0
         with:
