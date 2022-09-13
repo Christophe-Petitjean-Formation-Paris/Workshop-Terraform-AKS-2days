@@ -17,6 +17,7 @@ jobs:
       - name: pwd
         run: |
           pwd
+          ls -lisa
         
       - name: Code Analysis
         uses: bridgecrewio/checkov-action@v12.1347.0
