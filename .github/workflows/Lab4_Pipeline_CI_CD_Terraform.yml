@@ -20,7 +20,7 @@ jobs:
           directory: Terraform/Lab4_Pipeline_CI_CD_Terraform/
           api-key: b486210c-fca6-47f2-9837-dc64c6dd2dba
           framework: terraform
-          output: json
+          output_format: json
 
       # Install the needed version of Terraform cli
       - name: Setup Terraform
