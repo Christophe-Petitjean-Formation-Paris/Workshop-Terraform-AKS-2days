@@ -10,5 +10,5 @@
 # cf. https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group
 resource "azurerm_resource_group" "Terra_tfbackend_rg" {
   name     = var.resourceGroupName
-  location = var.azureRegion
+  #location = var.azureRegion
 }
