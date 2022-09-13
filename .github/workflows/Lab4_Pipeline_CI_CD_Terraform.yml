@@ -17,7 +17,7 @@ jobs:
       - name: Code Analysis
         uses: bridgecrewio/checkov-action@v12.1347.0
         with:
-          directory: Terraform/Lab4_Pipeline_CI_CD_Terraform/
+          directory: ./Terraform/Lab4_Pipeline_CI_CD_Terraform/
           api-key: b486210c-fca6-47f2-9837-dc64c6dd2dba
           framework: terraform
           output_format: json
