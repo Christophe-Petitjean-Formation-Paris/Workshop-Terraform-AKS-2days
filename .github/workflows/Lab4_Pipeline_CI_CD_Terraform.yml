@@ -4,7 +4,7 @@ name: 2 - Workflow CI/CD Terraform
 on:
   push:
     branches:
-    - main
+    - master
 
 jobs:
 
