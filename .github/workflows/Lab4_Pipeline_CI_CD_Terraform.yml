@@ -17,16 +17,6 @@ jobs:
       - name: Checks-out du repository
         uses: actions/checkout@v2
         
-      - name: pwd
-        run: |
-          pwd
-          ls -lisa
-          
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v1
-        with:
-          python-version: 3.8
-        
       - name: Code Analysis
         uses: bridgecrewio/checkov-action@v12.1347.0
         with:
