@@ -16,21 +16,6 @@ jobs:
 
       - name: Checks-out du repository
         uses: actions/checkout@v2
-
-      - name: Run Bridgecrew 
-        id: Bridgecrew
-        uses: bridgecrewio/bridgecrew-action@master 
-        with:
-          api-key: ${{ secrets.BC_API_KEY }}
-          directory: Terraform/Lab4_Pipeline_CI_CD_Terraform/
-        
-     # - name: Code Analysis
-     #   uses: bridgecrewio/checkov-action@v12.1347.0
-     #   with:
-     #     directory: Terraform/Lab4_Pipeline_CI_CD_Terraform/
-     #     api-key: ${{ secrets.CHECKOV_API_KEY }}
-     #     framework: terraform
-     #     output_format: json
      
       - name: Test with Checkov
         id: checkov
@@ -38,6 +23,12 @@ jobs:
         with:
           directory: Terraform/Lab4_Pipeline_CI_CD_Terraform
           framework: terraform 
+      
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          # Path to SARIF file relative to the root of the repository
+          sarif_file: results.sarif
 
       # Install the needed version of Terraform cli
       - name: Setup Terraform
