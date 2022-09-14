@@ -31,6 +31,13 @@ jobs:
      #     api-key: ${{ secrets.CHECKOV_API_KEY }}
      #     framework: terraform
      #     output_format: json
+     
+      - name: Test with Checkov
+        id: checkov
+        uses: bridgecrewio/checkov-action@master
+        with:
+          directory: Terraform/Lab4_Pipeline_CI_CD_Terraform
+          framework: terraform 
 
       # Install the needed version of Terraform cli
       - name: Setup Terraform
